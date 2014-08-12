@@ -1,4 +1,4 @@
-err-handler
+err-Fly
 ===========
 
 handle callback err with node style
@@ -38,7 +38,7 @@ async(arg1, arg2, function(err, data){
 ###Now
 
 ```js
-wrapper = errHandler(cb);
+wrapper = errFly(cb);
 async(arg1, arg2, wrapper(function(data){
   //.......
   async2(arg11, arg22, wrapper(function(data2){

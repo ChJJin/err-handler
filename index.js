@@ -1,25 +1,27 @@
 module.exports = function errHandler(callback) {
-  var _callback = callback || function(err) {
-    throw err;
-  };
+  if (!callback || typeof callback !== 'function') {
+    throw new Error('the first argument must be a function');
+  }
   var called = false;
-  callback = function(err) {
-    if (!called){
+  _callback = function() {
+    var args = [].slice.call(arguments, 0);
+    if (!called) {
       called = true;
-      _callback(err);
+      return callback.apply(null, args);
     }
   };
 
-  return function wrapper(handler, context) {
-    if (!context){
-      context = this;
-    }
+  function wrapper(handler) {
     return function(err, data) {
-      if (err){
-        return callback(err);
+      if (err) {
+        return _callback(err);
       }
       var args = [].slice.call(arguments, 1);
-      return handler.apply(context, args);
+      return handler.apply(null, args);
     };
-  };
+  }
+
+  wrapper.fn = _callback;
+
+  return wrapper;
 };
