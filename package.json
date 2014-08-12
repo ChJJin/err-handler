@@ -1,0 +1,27 @@
+{
+  "name": "errFly",
+  "version": "0.0.1",
+  "description": "handle callback err with node style",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec --compilers coffee:coffee-script/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChJJin/errFly.git"
+  },
+  "keywords": [
+    "err"
+  ],
+  "author": "ChJJin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChJJin/errFly/issues"
+  },
+  "homepage": "https://github.com/ChJJin/errFly",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "chai": "^1.9.1",
+    "coffee-script": "^1.7.1"
+  }
+}

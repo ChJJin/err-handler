@@ -46,5 +46,18 @@ async(arg1, arg2, wrapper(function(data){
     cb(null, data2);
   }));
 }));
+```
 
+if the callback could be called only once, then
+
+```js
+wrapper = errFly(cb);
+async(arg1, arg2, wrapper(function(data){
+  //.......
+  wrapper.fn(null, data);
+}));
+async2(arg11, arg22, wrapper(function(data2){
+  //.......
+  wrapper.fn(null, data2);
+}));
 ```
