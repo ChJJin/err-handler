@@ -1,5 +1,5 @@
 {
-  "name": "errFly",
+  "name": "errfly",
   "version": "0.0.1",
   "description": "handle callback err with node style",
   "main": "index.js",
@@ -11,10 +11,12 @@
     "url": "https://github.com/ChJJin/errFly.git"
   },
   "keywords": [
-    "err"
+    "err",
+    "error",
+    "fly"
   ],
   "author": "ChJJin",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ChJJin/errFly/issues"
   },
