@@ -27,7 +27,7 @@ async(arg1, arg2, function(err, data){
   //..........
   async2(arg11, arg22, function(err2, data2){
     if (err2){
-      return cb (err);
+      return cb(err2);
     }
     //.........
     cb(null, data2);
